@@ -180,7 +180,7 @@ return {
         bashls = {
           filetypes = { 'bash', 'sh', 'zsh' },
         },
-        -- clangd = {},
+        clangd = { cmd = { 'clangd', '--fallback-style=webkit' } },
         -- gopls = {},
         pyright = {},
         rust_analyzer = {},
