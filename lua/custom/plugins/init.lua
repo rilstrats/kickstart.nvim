@@ -7,14 +7,15 @@ return {
   { 'xiyaowong/transparent.nvim', lazy = false },
   {
     'iamcco/markdown-preview.nvim',
-    cmd = {
-      'MarkdownPreviewToggle',
-      'MarkdownPreview',
-      'MarkdownPreviewStop',
-    },
+    cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
+    build = 'cd app && yarn install',
+    init = function()
+      vim.g.mkdp_filetypes = { 'markdown' }
+    end,
     ft = { 'markdown' },
-    build = function()
-      vim.fn['mkdp#util#install']()
+    config = function()
+      vim.g.mkdp_browser = 'brave'
+      vim.g.mkdp_page_title = '${name}'
     end,
   },
 }
