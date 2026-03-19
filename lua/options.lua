@@ -5,20 +5,8 @@
 vim.o.shiftwidth = 4
 vim.o.softtabstop = 4
 vim.o.expandtab = true
--- vim.g.clipboard = 'osc52'
--- I would just use the above command, and configure Alacritty to support it,
--- but the Zellij developer is insistent on not supporting OSC52 Paste
-vim.g.clipboard = {
-  name = 'OSC52 Copy & wl-paste',
-  copy = {
-    ['+'] = require('vim.ui.clipboard.osc52').copy '+', -- clipboard
-    ['*'] = require('vim.ui.clipboard.osc52').copy '*', -- primary
-  },
-  paste = {
-    ['+'] = { 'wl-paste', '--no-newline' }, -- clipboard
-    ['*'] = { 'wl-paste', '--no-newline', '--primary' }, -- primary
-  },
-}
+vim.g.clipboard = 'osc52'
+-- zellij is dead to me
 
 -- Make line numbers default
 vim.o.number = true

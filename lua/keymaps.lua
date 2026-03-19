@@ -5,6 +5,8 @@
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
+vim.keymap.set('n', '<leader>r', '<cmd>source $MYVIMRC<CR>', { desc = '[R]eload Neovim config' })
+
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
@@ -37,17 +39,15 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 -- vim.keymap.set("n", "<C-S-j>", "<C-w>J", { desc = "Move window to the lower" })
 -- vim.keymap.set("n", "<C-S-k>", "<C-w>K", { desc = "Move window to the upper" })
 
--- yank into clipboard
-vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]], { desc = 'Clipboard: Copy' })
-vim.keymap.set('n', '<leader>Y', [["+Y]], { desc = 'which_key_ignore' })
-
--- yank into clipboard
-vim.keymap.set({ 'n', 'v' }, '<leader>d', [["+d]], { desc = 'Clipboard: Cut' })
-vim.keymap.set('n', '<leader>D', [["+D]], { desc = 'which_key_ignore' })
-
--- put from clipboard
-vim.keymap.set({ 'n', 'v' }, '<leader>p', [["+p]], { desc = 'Clipboard: Paste' })
-vim.keymap.set('n', '<leader>P', [["+P]], { desc = 'which_key_ignore' })
+-- yank to clipboard
+vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]], { desc = '[Y]ank to clipboard' })
+-- vim.keymap.set('n', '<leader>Y', [["+Y]], { desc = 'which_key_ignore' })
+-- -- delete to clipboard
+-- vim.keymap.set({ 'n', 'v' }, '<leader>d', [["+d]], { desc = '[D]elete to clipboard' })
+-- vim.keymap.set('n', '<leader>D', [["+D]], { desc = 'which_key_ignore' })
+-- -- put from clipboard
+-- vim.keymap.set({ 'n', 'v' }, '<leader>p', [["+p]], { desc = '[P]ut from clipboard' })
+-- vim.keymap.set('n', '<leader>P', [["+P]], { desc = 'which_key_ignore' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
