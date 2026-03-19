@@ -11,11 +11,8 @@ return {
     build = 'cd app && yarn install',
     init = function()
       vim.g.mkdp_filetypes = { 'markdown' }
-    end,
-    ft = { 'markdown' },
-    config = function()
-      vim.g.mkdp_browser = 'brave'
       vim.g.mkdp_page_title = '${name}'
     end,
+    ft = { 'markdown' },
   },
 }
